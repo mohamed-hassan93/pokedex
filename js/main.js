@@ -13,3 +13,21 @@ function play() {
     var audio = document.getElementById("audio");
     audio.play();
   }
+
+
+document.querySelector('.search').addEventListener('click', runPokeDex);
+
+function runPokeDex(){
+ 
+    let pokemon = document.getElementById('pokemonID')
+ 
+    fetch(apiUrl)
+    .then(res => res.json())
+  
+    .then(data => {
+        console.log(data);
+     })
+    .catch(err => {
+        console.log(`error ${err}`)
+    })
+}
